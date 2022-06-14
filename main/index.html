@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Hobby</title>
+    <script src="../jquery.js"></script>
+    <script src="../jquery-ui.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <link href="sites/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="images/icon.png">
+</head>
+<body>
+
+  <nav class="menu">
+    <h1><a href="index.html">MOJE HOBBY</a></h1>
+    <ul>
+      <li><h2>Hobby</h2>
+        <ul>
+          <li class="slidedown"><a href="sites/historia.html">Historia</a></li>
+          <li class="slidedown"><a href="sites/tricki.html">Tricki</a></li>
+        </ul>
+      </li>
+      <li><h2><a href="sites/galeria.html">Galeria</a></h2></li>
+      <li><h2>Wypełniacze</h2>
+      <ul>
+        <li class="slidedown"><a href="sites/ankieta.html">Ankieta</a></li>
+        <li class="slidedown"><a href="sites/from.html">Formularz</a></li>
+      </ul>
+      <li><h2 class="login"><a href="sites/login.html">Zaloguj się</a></h2></li>
+    </ul>
+
+</nav>
+
+  <div class="banner1">
+    <div class="banner">
+      <h3><a href="#link">Deskorolka</a></h3>
+      <p>Witam! Niniejsza storna będzie poświęcona mojemu hobby - czyli deskorolce. Przedsatwię tutaj kilka ciekawycz informacji o tym sporcie.</p>
+    </div>
+</div>
+
+<div id="link">
+  &#160;
+</div>
+
+  <div id="content">
+
+    <div id="start">
+      <div class="start_box">
+        <h4>Tak działa localStorage</h4>
+        <h4>Po kliknięciu już nigdy tego nie zobaczysz</h4>
+        <button id="OK_box" onclick="klik()">OK</button>
+      </div>
+    </div>
+
+
+    <h4>Na początek trochę informacji o mnie</h4>
+    <p>
+      Nazywam się Mikołaj Trylewicz. Studiuję informatykę na Politechnice Gdańskiej.
+    </p>
+    <p>
+      Na deskorolce jeżdżę już wiele lat. Od małęgo fascynowałem się tym spotrem - czy oglądając kreskówki, filmy czy widząc kogoś, kto jeżdził - zawsze patrzyłem na takie osoby z podziwem.
+      Bo w końcu te wszystkie akrobacje wyglądają na strasznie trudne i strasznie fajne!
+    </p>
+    <p>
+      Pierwszą deskę dostałem na 8 urodziny. Początki były trudne i deska szybko poszła w kąt. Dopiero pod koniec nauki<br> w skzole podstawwej zebrała się grupa przyjaciół, z którymi można było nauczyć się tricków.
+    </p>
+
+      <h4>Trochę o sporcie</h4>
+    <p>
+      Deskorolka jest sportem innym niż inne. Niekótrzy mówią, że to jest bardziej sztuka, niż sport. Trzeba się z nimi zgodzić. Chyba żaden sport nie rozwinął się pod względem fotografii oraz filmografii.
+      Co roku wychodzą nowe filmy deskorolkowe, gdzie można zobaczyć wyczyny na najwyższym poziomie. Również istnieje wiele gazet, gdzie można zobaczyć piękne zdjęcia tricków, w pięknych sceneriach. Kilka takich zdjęć można znaleźć w zakładce <a href="galeria.html">galeria</a>.
+    </p>
+    <p>
+      Jak to wszędzie bywa, początki są trudne. Zanim będzie sie chciało nauczyć jakichś tricków, trzeba się nauczyć jeździć na deskorolce. Na początku bardzo trudno jest utrzymać równowagę tylko stojąc na niej, a co dopiero jeździć. Potem przydałoby się nauczyć skręcać, hamować itp.
+      Dopiero, gdy te podstawowe rzeczy zostanąć ogarnięte można próbować akrobacji.<br>
+    </p>
+
+    <h4>Gdzie można mnie znaleźć</h4>
+    <div class="media">
+      <a href="https://www.facebook.com/mikichomik" target="_blank"><img src="images/fb.png" alt="fb"></a>
+      <a href="https://www.instagram.com/tryluu/?hl=pl" target="_blank"><img src="images/ig.png" alt="insta"></a>
+    </div>
+  </div>
+
+
+
+  <div class="footer">
+    <h5>Deskorolka © 2017 Mikołaj Trylewicz 171582</h5>
+    <a href="#"><img class="imgfot" src="images/arrow.png" alt="arrow"></a>
+  </div>
+
+  <script>
+
+
+  function klik() {
+    $("#OK_box").click(
+      function()
+      {
+        $("#start").fadeOut(600)
+      }
+    );
+      if (localStorage.klik) {
+          localStorage.klik = Number(localStorage.klik) + 1;
+      } else {
+          localStorage.klik = 1;
+      }
+    }
+
+  if(localStorage.klik>0)
+  {
+      $("#start").fadeOut(1);
+  }
+  else {
+    $("#start").css("display", "flex");
+  }
+  </script>
+
+</body>
+</html>

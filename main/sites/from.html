@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <script src="../jquery.js"></script>
+    <script src="../jquery-ui.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="../images/icon.png">
+</head>
+<body>
+
+  <nav class="menu">
+    <h1><a href="../index.html">MOJE HOBBY</a></h1>
+    <ul>
+      <li><h2>Hobby</h2>
+        <ul>
+          <li class="slidedown"><a href="historia.html">Historia</a></li>
+          <li class="slidedown"><a href="tricki.html">Tricki</a></li>
+        </ul>
+      </li>
+      <li><h2><a href="galeria.html">Galeria</a></h2></li>
+      <li><h2>Wypełniacze</h2>
+      <ul>
+        <li class="slidedown"><a href="ankieta.html">Ankieta</a></li>
+        <li class="slidedown"><a href="from.html">Formularz</a></li>
+      </ul>
+      <li><h2 class="login"><a href="login.html">Zaloguj się</a></h2></li>
+    </ul>
+</nav>
+
+  <div class="banner7">
+    <div class="banner">
+      <h3><a href="#link">Kontakt</a></h3>
+      <p>Jeżeli masz chęć skontaktowania sę z autorem strony wypełnij poniższy formularz.</p>
+    </div>
+  </div>
+
+<div id="link">
+  .
+</div>
+
+<div id="content">
+  <div class="content1">
+
+
+
+    <form>
+      <h4><label>Imię i nazwisko</label></h4>
+      <input type="text" placeholder="Imię i nazwisko">
+
+    <h4><label>Email</label></h4>
+      <input type="text" placeholder="example@gmail.com">
+
+
+      <h4><label>Wiadomość</label></h4>
+      <textarea placeholder="Wpisz tekst..."></textarea>
+
+      <br>
+
+        <input type="submit" value="Wyślij" id="dialog-link" >
+
+      <div id="dialog" title="Sukces!">
+          <p>Twoja wiadomość została wysłana!</p>
+      </div>
+    </form>
+
+  </div>
+
+  <h4> Lub wyślij wiadomość bezpośrednio na e-mail<br>
+  <a href="mailto:mikichomik@wp.pl">mikolaj.trylewicz@wp.pl</a></h4>
+  <br><br>
+</div>
+
+
+<div class="footer">
+  <h5>Deskorolka © 2017 Mikołaj Trylewicz 171582</h5>
+  <a href="#"><img class="imgfot" src="../images/arrow.png" alt="arrow"></a>
+</div>
+
+<script>
+
+$( "#dialog" ).dialog({
+	autoOpen: false,
+	width: 400,
+	buttons: [
+		{
+			text: "OK",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	]
+});
+
+$( "#dialog-link" ).click(function( event ) {
+	$( "#dialog" ).dialog( "open");
+
+	event.preventDefault();
+
+});
+
+</script>
+
+</body>
+</html>

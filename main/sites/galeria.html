@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <script src="../jquery.js"></script>
+    <script src="../jquery-ui.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="../images/icon.png">
+</head>
+<body>
+
+  <nav class="menu">
+    <h1><a href="../index.html">MOJE HOBBY</a></h1>
+    <ul>
+      <li><h2>Hobby</h2>
+        <ul>
+          <li class="slidedown"><a href="historia.html">Historia</a></li>
+          <li class="slidedown"><a href="tricki.html">Tricki</a></li>
+        </ul>
+      </li>
+      <li><h2><a href="galeria.html">Galeria</a></h2></li>
+      <li><h2>Wypełniacze</h2>
+      <ul>
+        <li class="slidedown"><a href="ankieta.html">Ankieta</a></li>
+        <li class="slidedown"><a href="from.html">Formularz</a></li>
+      </ul>
+      <li><h2 class="login"><a href="login.html">Zaloguj się</a></h2></li>
+    </ul>
+</nav>
+
+  <div class="banner5">
+    <div class="banner">
+      <h3  style="cursor: default;">Galeria</h3>
+      <p>Tutaj możesz znaleźć różne ciekawe zdjęcia. O tematyce <a href="#sport">sportowej</a> oraz <a href="#przyr">przyrodniczej</a>.</p>
+    </div>
+  </div>
+
+  <div class="box">
+     <span class="cross">&#10006;</span>
+      <div class="sub-box">
+          <img src="#" alt="Obrazek">
+      </div>
+  </div>
+
+  <div id="sport">
+    <h4>Sport</h4>
+    <div class="pocket"><img class="img" id="1" src="../images/1.jpg" alt="1" onclick="licz()"></div>
+    <div><p id="result">&#160;</p></div>
+    <div class="pocket"><img class="img" src="../images/2.jpg" alt="2"></div>
+    <div class="pocket"><img class="img" src="../images/3.jpg" alt="3"></div>
+    <div class="pocket"><img class="img" src="../images/4.jpg" alt="4"></div>
+    <div class="pocket"><img class="img" src="../images/5.jpg" alt="5"></div>
+  </div>
+  <div id="przyr">
+  <h4>Przyroda</h4>
+    <div class="pocket"><img class="img" src="../images/6.jpg" alt="6"></div>
+    <div class="pocket"><img class="img" src="../images/7.jpg" alt="7"></div>
+    <div class="pocket"><img class="img" src="../images/8.jpg" alt="8"></div>
+    <div class="pocket"><img class="img" src="../images/9.jpg" alt="9"></div>
+    <div class="pocket"><img class="img" src="../images/10.jpg" alt="10"></div>
+  </div>
+
+  <script>
+      $(document).ready(
+        function()
+      {
+          $( ".pocket img").click(
+            function()
+          {
+              $(".box").fadeIn(600);
+              $(".box img").attr("src", $(this).attr("src"));
+          });
+          $( ".cross" ).click(
+            function()
+          {
+              $(".box").fadeOut(600);
+          });
+      });
+
+      function licz() {
+          if (sessionStorage.licz) {
+              sessionStorage.licz = Number(sessionStorage.licz) + 1;
+          } else {
+              sessionStorage.licz = 1;
+          }
+          var div = document.getElementById("result");
+          div.innerHTML = "Oglądałeś to zdjęcie już " + sessionStorage.licz +" razy! <button id="+"OK_box"+">OK</button>";
+
+
+          $("#1").click(
+            function()
+              {
+                $("#result").fadeIn(600);
+                $("#OK_box").fadeIn(600);
+            });
+          $("#OK_box").click(
+            function()
+              {
+                $("#result").fadeOut(600);
+                $("#OK_box").fadeOut(600);
+              });
+
+      }
+  </script>
+
+
+  <div class="footer">
+    <h5>Deskorolka © 2017 Mikołaj Trylewicz 171582</h5>
+    <a href="#"><img class="imgfot" src="../images/arrow.png" alt="arrow"></a>
+  </div>
+</body>
+</html>

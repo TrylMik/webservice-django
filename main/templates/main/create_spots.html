@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% block title %} Dodaj miejscówkę {% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-secondary">Opublikuj</button>
+    </div>
+        
+    <script>
+        var name ='{{ user.id }}';
+        document.getElementById('user').value = name;
+    </script>
+
+    {% else %}
+        <h1>Zaloguj się, aby dodać miejscówkę!</h1>
+    {% endif %}
+
+{% endblock %}

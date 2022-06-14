@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+{% block title %} Zdjęcia {% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+        Tutaj będzie przycisk DODAJ ZDJĘCIE
+    {% endif %}
+
+    <p>Zdjęcia</p>
+
+{% endblock %}

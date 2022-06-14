@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankieta</title>
+    <script src="../jquery.js"></script>
+    <script src="../jquery-ui.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="../images/icon.png">
+</head>
+<body>
+  <nav class="menu">
+    <h1><a href="../index.html">MOJE HOBBY</a></h1>
+    <ul>
+      <li><h2>Hobby</h2>
+        <ul>
+          <li class="slidedown"><a href="historia.html">Historia</a></li>
+          <li class="slidedown"><a href="tricki.html">Tricki</a></li>
+        </ul>
+      </li>
+      <li><h2><a href="galeria.html">Galeria</a></h2></li>
+      <li><h2>Wypełniacze</h2>
+      <ul>
+        <li class="slidedown"><a href="ankieta.html">Ankieta</a></li>
+        <li class="slidedown"><a href="from.html">Formularz</a></li>
+      </ul>
+      <li><h2 class="login"><a href="login.html">Zaloguj się</a></h2></li>
+    </ul>
+</nav>
+
+<div class="banner6">
+  <div class="banner">
+    <h3><a href="#link">ankieta</a></h3>
+      <p>Chciałbym przprowadzić krótką ankietę na temat tego projektu. <br>Jeżeli masz taką ochotę i czas proszę Cię, abyś ją wypełnił.</p>
+    </div>
+</div>
+
+<div id="link">
+  .
+</div>
+
+<div id="content">
+  <div class="content1">
+    <form>
+      <h4><label>1) Imię</label></h4>
+      <input type="text" placeholder="Mikołaj">
+      <br><br>
+
+      <h4><label>2) Nazwisko</label></h4>
+      <input type="text" placeholder="Trylewicz">
+      <br><br>
+
+      <h4>3) Data wypełniania ankiety: <br><input type="text" id="datepicker"></h4>
+      <br>
+
+      <h4><label>4) Płeć</label></h4>
+      <select>
+        <option>-</option>
+        <option>Mężczyzna</option>
+        <option>Kobieta</option>
+        <option>Inna</option>
+      </select>
+      <br><br>
+
+      <h4><label>5) Wybierz sekcje, które Ci sie podobały</label></h4>
+      <p><input type="checkbox"> Hobby</p>
+      <p><input type="checkbox"> Galeria</p>
+      <p><input type="checkbox"> Wypełniacze</p>
+      <br><br>
+
+      <h4><label>6) Najfajniejszy trick to</label></h4>
+      <p><input type="radio" name="trick" checked> Żaden</p>
+      <p><input type="radio" name="trick"> Ollie</p>
+      <p><input type="radio" name="trick"> Kickflip</p>
+      <p><input type="radio" name="trick"> Pop Shove it</p>
+      <p><input type="radio" name="trick"> 360 flip</p>
+
+      <br><br>
+
+      <h4><label>7) Sport, czy przyroda? A może to i to?</label></h4>
+      <p><input type="checkbox"> Sport</p>
+      <p><input type="checkbox"> Przyroda</p>
+      <p><input type="checkbox"> Obydwa </p>
+      <br><br>
+
+      <h4><label>8) Podaj swoją opinię na temat strony</label></h4>
+      <textarea placeholder="Wpisz tekst..."></textarea>
+      <br>
+
+      <h4 id="none">9) Posortuj filmy tak jak było w tabelce</h4>
+      <ul id="sortable">
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><p>Street Dreams</p></li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><p>Baker 3</p></li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><p>Grind</p></li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><p>The Search for Animal Chin</p></li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><p>Królowie Dogtown</p></li>
+      </ul>
+
+
+      <input type="submit" value="Wyślij">
+      <input type="reset" value="Czyść" onclick="document.getElementById('none').style.color = 'red'">
+
+
+    </form>
+  </div>
+</div>
+
+<div class="footer">
+  <h5>Deskorolka © 2017 Mikołaj Trylewicz 171582</h5>
+  <a href="#"><img class="imgfot" src="../images/arrow.png" alt="arrow"></a>
+</div>
+
+<script>
+
+
+
+$( function() {
+  $( "#datepicker" ).datepicker();
+} );
+
+  var licz=1;
+  if(licz=1)
+  {
+    $("#sortable").css("display", "block");
+    $("#none").css("display", "block");
+  }
+
+  $( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );
+
+</script>
+</body>
+</html>

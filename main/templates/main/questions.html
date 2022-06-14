@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+{% block title %} Pytania {% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+        Tutaj będzie przycisk DODAJ PYTANIE
+    {% endif %}
+
+    <p>Pytanka</p>
+
+{% endblock %}

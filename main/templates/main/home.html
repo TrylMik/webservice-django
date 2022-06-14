@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% block title %}Forum deskorolkowe {% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <p>Aby uniknąc niepotrzebnego spamu zamieszaj treści w odpowdnich sekcjach:</p>
+        <ol>
+            <!-- <li><b>Pytania</b></li>
+            <p>W tej sekcji możesz śmiało zadawać różne pytania odnosnie sprzętu, porad, czy szukac ludzi do wspólnej jazdy.</p>
+            <li><b>Filmy</b></li>
+            <p>Ta sekcja jest przeznaczona na publikowanie swoich lub innych filmów związanych z deskorolką.</p>
+            <li><b>Zdjęcia</b></li>
+            <p>Ta sekcja jest przeznaczona na publikowanie swoich lub innych zdjęć związanych z deskorolką.</p> -->
+            <li><b>Miejscówki</b></li>
+            <p>W tej skecji mozna umieszczać dane lokalizacyjne skateparków lub miejsc, gdzie można jeździć na deskorolce.</p>
+        </ol>
+    {% else %}
+        <h1>Witaj!</h1>
+        <p>Forum deskorolkowe jest miejscem, gdzie możesz swobodnie zadawać pytania, publikować treści oraz zawierać przyjaźnie na lata!</p>
+        <p>Niezalogowani użytkownicy mogą jedynie przeglądać dostępne treści.</p>
+        <p>Aby w pełni korzystać z forum zaloguj się lub stwórz konto!</p>
+    {% endif %}
+
+{% endblock %}

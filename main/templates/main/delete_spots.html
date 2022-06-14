@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+{% block title %} Usuń miejscówkę {% endblock %}
+{% block content %}
+    {% if perms.main.delete_spotspost or user == spotspost.author %}
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            
+            <button class="btn btn-secondary">Usuń post</button>
+    </div>
+
+    {% else %}
+        <h1>Nie masz uprawnień.</h1>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+{% block title %} Filmy {% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+        Tutaj będzie przycisk DODAJ FILM
+    {% endif %}
+
+    <p>Filmy</p>
+
+{% endblock %}

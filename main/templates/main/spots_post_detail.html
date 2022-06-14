@@ -1,0 +1,49 @@
+{% extends 'main/base.html' %}
+{% block title %} Miejscówki {% endblock %}
+{% block content %}
+
+        <p>
+            Autor: <b>{{object.author}}</b>
+            </br>
+            Tytuł: <u>{{object.title}}</u>
+            </br>
+            </br>
+            {{object.body}}
+        </p> 
+
+        <hr>
+
+        <p>
+            <b>Komentarze:</b>
+            </br>
+            {% if not spotspost.spotscomments.all %}
+                Brak komentarzy
+            {% else %}
+                {% for comment in spotspost.spotscomments.all %}
+                    <hr>
+                    <strong>
+                        {{comment.author}}
+                    </strong>
+                    </br>
+                    <i>{{comment.date}}</i>
+                    </br>
+                    {{comment.body}}
+                    </br>
+                    <hr>
+                {% endfor %}
+            {% endif %}
+            </br>
+            {% if user.is_authenticated %}
+            <a href="{% url 'spots-post-comment' spotspost.pk %}">
+                <button class="btn btn-secondary">Dodaj Komentarz</button>
+            </a>
+            {% endif %}
+        </p>
+
+
+
+
+
+    
+
+{% endblock %}
